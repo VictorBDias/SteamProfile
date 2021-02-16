@@ -18,12 +18,14 @@ export default function Header() {
   //     'Steam user not found, double check if the USER ID is correct 😥'
   //   );
 
+  // REFS
+
   // FUNCTIONS
-  async function handleSubmit() {
-    await getUser({ input }).then(response => {
-      console.log(input);
-      setUser(response.data);
-      console.log(response.data);
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(input);
+    await getUser(input).then(response => {
+      setUser(response.data.response.players);
     });
   }
 
@@ -31,7 +33,7 @@ export default function Header() {
     <header id="header">
       <Container>
         <ToastContainer />
-        <svg fill="#ffffff" strokeWidth="0" className="logo">
+        <svg fill="#ffffff" strokeWidth="0" viewBox="0" className="logo">
           <path
             xmlns="http://www.w3.org/2000/svg"
             className="Logo"
