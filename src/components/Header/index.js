@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import React from 'react';
-
-// CUSTOM IMPORTS
+import { useBetween } from 'use-between';
 import { FaSearch } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
+
+// CUSTOM IMPORTS
 import { Container, Form, SubmitButton } from './styles';
 
 // APIS
@@ -17,8 +18,6 @@ export default function Header() {
   //   toast.error(
   //     'Steam user not found, double check if the USER ID is correct 😥'
   //   );
-
-  // REFS
 
   // FUNCTIONS
   async function handleSubmit(e) {
