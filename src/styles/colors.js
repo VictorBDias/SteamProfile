@@ -3,6 +3,7 @@ const colors = {
   primary: '#f38fff',
   primaryDark: '#9325F7',
   accent: '#F060FF',
+  other: '#25E1EB',
 
   // TEXT
   text: '#222',

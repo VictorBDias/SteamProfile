@@ -4,9 +4,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   max-height: 80px;
-  background: #242424;
+  background: #202020;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
   padding: 15px;
+
+  svg.logo {
+    margin-left: 48px;
+  }
+`;
+
+export const Body = styled.div`
+  display: flex;
 `;
 
 export const Form = styled.form`
@@ -48,7 +56,7 @@ export const SubmitButton = styled.button.attrs(props => ({
 export const UserInfo = styled.div`
   display: flex;
   max-width: 350px;
-  margin-left: 32px;
+  margin-left: 48px;
   margin-top: 24px;
   flex-direction: column;
   padding: 15px;
@@ -62,9 +70,66 @@ export const UserInfo = styled.div`
 
   h1 {
     font-size: 24px;
-    color: #fafafa;
+    color: #f38fff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-bottom: 16px;
+  }
+
+  h2 {
+    color: #f38fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    color: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+`;
+
+export const Group = styled.div`
+  margin-bottom: 16px;
+`;
+
+export const PodiumGames = styled.div`
+  flex-direction: column;
+`;
+
+export const PodiumGame = styled.div`
+  display: flex;
+  height: 69px;
+  width: 420px;
+  border-radius: 4px;
+  margin-left: 80px;
+  margin-top: 24px;
+  flex-direction: row;
+  background-color: #5a5a5a;
+
+  img {
+    border-radius: 4px 0 0 4px;
+    height: 69px;
+    width: 184px;
+    margin-bottom: 24px;
+    margin-right: 16px;
+  }
+
+  svg {
+  }
+
+  h2 {
+    color: #f38fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    margin-top: 16px;
+    color: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 `;

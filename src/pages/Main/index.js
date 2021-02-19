@@ -2,14 +2,28 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
-import SimpleDateTime from 'react-simple-timestamp-to-date';
+import sortArray from 'sort-array';
 
 // CUSTOM IMPORTS
-import { Container, Form, SubmitButton, UserInfo } from './styles';
+import {
+  Container,
+  Form,
+  SubmitButton,
+  UserInfo,
+  Group,
+  PodiumGames,
+  PodiumGame,
+  Body,
+} from './styles';
 
 // APIS
 import { getUser } from '~/apis/userApi';
 import { getOwnedGames } from '~/apis/gamesApi';
+
+// import SimpleDateTime from 'react-simple-timestamp-to-date';
+
+const fromUnixTime = require('date-fns/fromUnixTime');
+const formatISO = require('date-fns/formatISO');
 
 export default function Main() {
   // STATES
@@ -17,7 +31,8 @@ export default function Main() {
   const [games, setGames] = React.useState({});
   const [found, setFound] = React.useState(false);
   const [input, setInput] = React.useState('76561198300021798');
-  // const [playTime, setPlayTIme] = React.useState('');
+
+  const auxArray = games.games;
 
   // const notifyNotFound = () =>
   //   toast.error(
@@ -40,28 +55,91 @@ export default function Main() {
   function totalHours() {
     let playtime = 0;
     for (let i = 0; i < games.game_count; i += 1) {
-      console.log(games.games[i].playtime_forever);
       playtime += games.games[i].playtime_forever;
     }
-    console.log(playtime);
+
     return (playtime / 60).toFixed(2);
+  }
+
+  function dateCreated() {
+    // WeekDay Mounth day year 00:00:00 GMT-0300 (Brasilia Standard Time))
+    const createdAt = fromUnixTime(user.timecreated);
+    const result = formatISO(createdAt);
+    return result.split('T')[0];
+  }
+
+  function getPodium() {
+    sortArray(auxArray, {
+      order: 'desc',
+      by: 'playtime_forever',
+      computed: {
+        number: row => row.inner.number,
+      },
+    });
   }
 
   function renderBody() {
     if (found) {
       return (
-        <UserInfo>
-          <img src={user.avatarfull} alt="profile-pic" />
-          <h1>{user.personaname}</h1>
-          <h1>Member Since:</h1>
-          <SimpleDateTime format="DMY" dateSeparator="/" showTime="0">
-            {user.timecreated}
-          </SimpleDateTime>
-          <h1>Horas totais de jogo: {totalHours()}</h1>
-          <h1>Jogos Pagos: {games.game_count}</h1>
-        </UserInfo>
+        <Body>
+          <UserInfo>
+            <img src={user.avatarfull} alt="profile-pic" />
+            <h1>{user.personaname}</h1>
+            <Group>
+              <h3>Member Since. </h3>
+              <h2>{dateCreated()}</h2>
+            </Group>
+            <Group>
+              <h3>Playtime Forever.</h3>
+              <h2> {totalHours()} hours</h2>
+            </Group>
+            <Group>
+              <h3>Paid Games.</h3>
+              <h2>{games.game_count}</h2>
+            </Group>
+          </UserInfo>
+
+          <PodiumGames>
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[0].appid}/${auxArray[0].img_logo_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h3>Playtime.</h3>
+                <h2>{(auxArray[0].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[1].appid}/${auxArray[1].img_logo_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h3>Playtime.</h3>
+                <h2>{(auxArray[1].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[2].appid}/${auxArray[2].img_logo_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h3>Playtime.</h3>
+                <h2>{(auxArray[2].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+          </PodiumGames>
+        </Body>
       );
     }
+
     return <h1>Ihh garai</h1>;
   }
 
