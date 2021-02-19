@@ -94,6 +94,28 @@ export const Group = styled.div`
   margin-bottom: 16px;
 `;
 
+export const GroupPod = styled.div`
+  margin-bottom: 16px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+
+  h4 {
+    margin-left: 16px;
+    margin-top: 16px;
+    color: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  img.podIcon {
+    margin-left: 80px;
+    margin-top: 24px;
+    height: 40px;
+    width: 48px;
+  }
+`;
+
 export const PodiumGames = styled.div`
   flex-direction: column;
 `;

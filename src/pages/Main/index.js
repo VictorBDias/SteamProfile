@@ -11,10 +11,12 @@ import {
   SubmitButton,
   UserInfo,
   Group,
+  GroupPod,
   PodiumGames,
   PodiumGame,
   Body,
 } from './styles';
+import podium from '~/assets/podium.png';
 
 // APIS
 import { getUser } from '~/apis/userApi';
@@ -100,6 +102,10 @@ export default function Main() {
           </UserInfo>
 
           <PodiumGames>
+            <GroupPod>
+              <img src={podium} className="podIcon" alt="podium-pic" />
+              <h4>Top 3 mais jogados</h4>
+            </GroupPod>
             <PodiumGame>
               {getPodium()}
               <img
@@ -140,7 +146,7 @@ export default function Main() {
       );
     }
 
-    return <h1>Ihh garai</h1>;
+    return <h1>No player</h1>;
   }
 
   return (
