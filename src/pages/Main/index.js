@@ -67,7 +67,6 @@ export default function Main() {
   }
 
   function dateCreated() {
-    // WeekDay Mounth day year 00:00:00 GMT-0300 (Brasilia Standard Time))
     const createdAt = fromUnixTime(user.timecreated);
     const result = formatISO(createdAt);
     return result.split('T')[0];
@@ -203,7 +202,7 @@ export default function Main() {
             <input
               type="text"
               id="steamId"
-              placeholder="Insira o ID do usuário"
+              placeholder="Enter the user ID"
               onChange={e => {
                 setInput(e.target.value);
               }}
