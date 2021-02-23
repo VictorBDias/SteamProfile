@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import sortArray from 'sort-array';
 
 // CUSTOM IMPORTS

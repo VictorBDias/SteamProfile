@@ -25,6 +25,7 @@ export const Form = styled.form`
   display: flex;
   margin-left: 50%;
   margin-right: 40px;
+  margin-top: 4px;
 
   input {
     flex: 1;
