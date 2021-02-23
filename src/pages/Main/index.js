@@ -15,8 +15,11 @@ import {
   PodiumGames,
   PodiumGame,
   Body,
+  NoPlayer,
 } from './styles';
 import podium from '~/assets/podium.png';
+import gaben from '~/assets/lord-gaben.png';
+import background from '~/assets/steambg10.png';
 
 // APIS
 import { getUser } from '~/apis/userApi';
@@ -83,7 +86,13 @@ export default function Main() {
   function renderBody() {
     if (found) {
       return (
-        <Body>
+        <Body
+          style={{
+            backgroundImage: `url(${background})`,
+            height: '100%',
+            width: '100%',
+          }}
+        >
           <UserInfo>
             <img src={user.avatarfull} alt="profile-pic" />
             <h1>{user.personaname}</h1>
@@ -103,8 +112,8 @@ export default function Main() {
 
           <PodiumGames>
             <GroupPod>
+              <h4>Most Played</h4>
               <img src={podium} className="podIcon" alt="podium-pic" />
-              <h4>Top 3 mais jogados</h4>
             </GroupPod>
             <PodiumGame>
               {getPodium()}
@@ -113,7 +122,7 @@ export default function Main() {
                 alt="profile-pic"
               />
               <Group>
-                <h3>Playtime.</h3>
+                <h4>Playtime.</h4>
                 <h2>{(auxArray[0].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
@@ -125,7 +134,7 @@ export default function Main() {
                 alt="profile-pic"
               />
               <Group>
-                <h3>Playtime.</h3>
+                <h4>Playtime.</h4>
                 <h2>{(auxArray[1].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
@@ -137,8 +146,32 @@ export default function Main() {
                 alt="profile-pic"
               />
               <Group>
-                <h3>Playtime.</h3>
+                <h4>Playtime.</h4>
                 <h2>{(auxArray[2].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[3].appid}/${auxArray[3].img_logo_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h4>Playtime.</h4>
+                <h2>{(auxArray[3].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[4].appid}/${auxArray[4].img_logo_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h4>Playtime.</h4>
+                <h2>{(auxArray[4].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
           </PodiumGames>
@@ -146,7 +179,11 @@ export default function Main() {
       );
     }
 
-    return <h1>No player</h1>;
+    return (
+      <NoPlayer>
+        <img src={gaben} className="gabenHome" alt="What the hell?" />
+      </NoPlayer>
+    );
   }
 
   return (

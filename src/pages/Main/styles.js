@@ -8,8 +8,10 @@ export const Container = styled.div`
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
   padding: 15px;
 
-  svg.logo {
+  img {
     margin-left: 48px;
+    width: 125px;
+    height: 30px;
   }
 `;
 
@@ -55,9 +57,8 @@ export const SubmitButton = styled.button.attrs(props => ({
 
 export const UserInfo = styled.div`
   display: flex;
-  max-width: 350px;
-  margin-left: 48px;
-  margin-top: 24px;
+  margin-left: 27%;
+  margin-top: 60px;
   flex-direction: column;
   padding: 15px;
 
@@ -70,14 +71,15 @@ export const UserInfo = styled.div`
 
   h1 {
     font-size: 24px;
-    color: #f38fff;
+    color: #ffff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   h2 {
-    color: #f38fff;
+    color: #48d9f5;
+    text-decoration: dashed;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-bottom: 8px;
@@ -95,13 +97,13 @@ export const Group = styled.div`
 `;
 
 export const GroupPod = styled.div`
+  margin-top: 16px;
   margin-bottom: 16px;
   flex-direction: row;
   display: flex;
   align-items: center;
 
   h4 {
-    margin-left: 16px;
     margin-top: 16px;
     color: #fafafa;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -109,8 +111,7 @@ export const GroupPod = styled.div`
   }
 
   img.podIcon {
-    margin-left: 80px;
-    margin-top: 24px;
+    margin-left: 20px;
     height: 40px;
     width: 48px;
   }
@@ -118,6 +119,8 @@ export const GroupPod = styled.div`
 
 export const PodiumGames = styled.div`
   flex-direction: column;
+  margin-top: 60px;
+  margin-left: 72px;
 `;
 
 export const PodiumGame = styled.div`
@@ -125,8 +128,7 @@ export const PodiumGame = styled.div`
   height: 69px;
   width: 420px;
   border-radius: 4px;
-  margin-left: 80px;
-  margin-top: 24px;
+  margin-bottom: 16px;
   flex-direction: row;
   background-color: #5a5a5a;
 
@@ -142,16 +144,23 @@ export const PodiumGame = styled.div`
   }
 
   h2 {
-    color: #f38fff;
+    color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-bottom: 8px;
   }
 
-  h3 {
+  h4 {
     margin-top: 16px;
     color: #fafafa;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+`;
+
+export const NoPlayer = styled.div`
+  img {
+    height: 100%;
+    width: 100%;
+    opacity: 15%;
   }
 `;
