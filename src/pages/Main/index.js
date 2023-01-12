@@ -11,13 +11,11 @@ import {
   SubmitButton,
   UserInfo,
   Group,
-  GroupPod,
   PodiumGames,
   PodiumGame,
   Body,
   NoPlayer,
 } from './styles';
-import podium from '~/assets/podium.png';
 import gaben from '~/assets/lord-gaben.png';
 import background from '~/assets/steambg10.png';
 
@@ -110,18 +108,19 @@ export default function Main() {
           </UserInfo>
 
           <PodiumGames>
-            <GroupPod>
+            {/* <GroupPod>
               <h4>Most Played</h4>
               <img src={podium} className="podIcon" alt="podium-pic" />
-            </GroupPod>
+            </GroupPod> */}
+
             <PodiumGame>
               {getPodium()}
               <img
-                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[0].appid}/${auxArray[0].img_logo_url}.jpg`}
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[0].appid}/${auxArray[0].img_icon_url}.jpg`}
                 alt="profile-pic"
               />
               <Group>
-                <h4>Playtime.</h4>
+                <h4>{auxArray[0].name}</h4>
                 <h2>{(auxArray[0].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
@@ -129,11 +128,12 @@ export default function Main() {
             <PodiumGame>
               {getPodium()}
               <img
-                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[1].appid}/${auxArray[1].img_logo_url}.jpg`}
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[1].appid}/${auxArray[1].img_icon_url}.jpg`}
                 alt="profile-pic"
               />
               <Group>
-                <h4>Playtime.</h4>
+                <h4>{auxArray[1].name}</h4>
+
                 <h2>{(auxArray[1].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
@@ -141,11 +141,11 @@ export default function Main() {
             <PodiumGame>
               {getPodium()}
               <img
-                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[2].appid}/${auxArray[2].img_logo_url}.jpg`}
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[2].appid}/${auxArray[2].img_icon_url}.jpg`}
                 alt="profile-pic"
               />
               <Group>
-                <h4>Playtime.</h4>
+                <h4>{auxArray[2].name}</h4>
                 <h2>{(auxArray[2].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
@@ -153,11 +153,11 @@ export default function Main() {
             <PodiumGame>
               {getPodium()}
               <img
-                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[3].appid}/${auxArray[3].img_logo_url}.jpg`}
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[3].appid}/${auxArray[3].img_icon_url}.jpg`}
                 alt="profile-pic"
               />
               <Group>
-                <h4>Playtime.</h4>
+                <h4>{auxArray[3].name}</h4>
                 <h2>{(auxArray[3].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
@@ -165,12 +165,45 @@ export default function Main() {
             <PodiumGame>
               {getPodium()}
               <img
-                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[4].appid}/${auxArray[4].img_logo_url}.jpg`}
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[4].appid}/${auxArray[4].img_icon_url}.jpg`}
                 alt="profile-pic"
               />
               <Group>
-                <h4>Playtime.</h4>
+                <h4>{auxArray[4].name}</h4>
                 <h2>{(auxArray[4].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[5].appid}/${auxArray[5].img_icon_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h4>{auxArray[5].name}</h4>
+                <h2>{(auxArray[5].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[6].appid}/${auxArray[6].img_icon_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h4>{auxArray[6].name}</h4>
+                <h2>{(auxArray[6].playtime_forever / 60).toFixed(2)} hours</h2>
+              </Group>
+            </PodiumGame>
+            <PodiumGame>
+              {getPodium()}
+              <img
+                src={`http://media.steampowered.com/steamcommunity/public/images/apps/${auxArray[7].appid}/${auxArray[7].img_icon_url}.jpg`}
+                alt="profile-pic"
+              />
+              <Group>
+                <h4>{auxArray[7].name}</h4>
+                <h2>{(auxArray[7].playtime_forever / 60).toFixed(2)} hours</h2>
               </Group>
             </PodiumGame>
           </PodiumGames>

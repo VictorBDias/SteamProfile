@@ -127,18 +127,17 @@ export const PodiumGames = styled.div`
 export const PodiumGame = styled.div`
   display: flex;
   height: 69px;
+  align-items: center;
   width: 420px;
   border-radius: 4px;
   margin-bottom: 16px;
   flex-direction: row;
-  background-color: #5a5a5a;
+  background-color: rgba(112, 112, 112, 0.3);
 
   img {
     border-radius: 4px 0 0 4px;
-    height: 69px;
-    width: 184px;
-    margin-bottom: 24px;
     margin-right: 16px;
+    margin-left: 16px;
   }
 
   svg {
