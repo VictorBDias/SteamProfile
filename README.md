@@ -30,7 +30,7 @@ The application is still unable to search for users with custom url, if the user
 <kbd>
   <img src="src/assets/Response.png">
 </kbd>
-
+# Response Updated
 <kbd>
   <img src="src/assets/response-new.png">
 </kbd>
